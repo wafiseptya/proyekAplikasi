@@ -1,0 +1,17 @@
+@mixin img-bg(){
+	background-size: cover;
+	background-repeat: no-repeat ;
+	background-position: center ;
+}
+@mixin flexbox() {
+ display: -webkit-box;
+ display: -moz-box;
+ display: -ms-flexbox;
+ display: -webkit-flex;
+ display: flex;
+}
+@mixin borderbox() {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+}

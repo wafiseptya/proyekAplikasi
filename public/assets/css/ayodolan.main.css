@@ -1,0 +1,193 @@
+/*!
+  Project Name : Web 2 Proyek Akhir Perbankan
+  Author : KOMSI UGM
+  Date Created : 21 September 2018 08:24:16 GMT+7
+  Copyright : 2018 (c) All Rights Reserved
+
+  Not for shared or published by others.
+*/
+.bla {
+  color: #000; }
+
+.grey {
+  color: #E1E1E1; }
+
+.dr-grey {
+  color: #9E9E9E; }
+
+.hl-grey {
+  color: #E0E0E0; }
+
+.wh {
+  color: #fff; }
+
+.blue {
+  color: #2196F3; }
+
+.smaller {
+  font-size: 0.8em; }
+
+.normal {
+  font-size: 1em; }
+
+.baby-big {
+  font-size: 1.2em !important; }
+
+.big {
+  font-size: 1.5em !important; }
+
+.more-big {
+  font-size: 2.5em !important; }
+
+.bigger {
+  font-size: 3em !important; }
+
+.somewhat-bigger {
+  font-size: 4.5em; }
+
+.text-thin {
+  font-weight: 100; }
+
+.text-extra-light {
+  font-weight: 200; }
+
+.text-light {
+  font-weight: 300; }
+
+.text-regular {
+  font-weight: 400; }
+
+.text-medium {
+  font-weight: 500; }
+
+.text-semi-bold {
+  font-weight: 600; }
+
+.text-bold {
+  font-weight: 700; }
+
+.text-extra-bold {
+  font-weight: 800; }
+
+.text-weight-black {
+  font-weight: 900; }
+
+.text-bold {
+  font-weight: bold !important; }
+
+.text-center {
+  text-align: center !important; }
+
+.line-1 {
+  line-height: 1; }
+
+body, html {
+  height: 100%;
+  margin: 0; }
+
+.header {
+  background-image: url("/assets/images/4.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 0 15em; }
+  .header .title h1 {
+    font-weight: 200;
+    font-size: 6em; }
+  .header p, .header h1, .header h2, .header h3, .header h4, .header h5, .header h6 {
+    color: #fff; }
+
+.img {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 200px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+section {
+  min-height: 100vh; }
+  section p, section h1, section h2, section h3, section h4, section h5, section h6 {
+    margin: 0;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    z-index: 1; }
+  section h4, section small {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: 600; }
+
+.separator {
+  height: 35vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap; }
+  .separator h2 {
+    font-size: 3em; }
+  .separator h2::after {
+    background: none repeat scroll 0 0 #000;
+    bottom: -10px;
+    content: "";
+    display: block;
+    height: 4px;
+    position: relative;
+    width: 2em; }
+  .separator p, .separator h1, .separator h2, .separator h3, .separator h4, .separator h5, .separator h6 {
+    font-weight: 400;
+    z-index: 1; }
+
+.big-img {
+  height: 60vh;
+  background-image: url("/assets/images/7.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap; }
+
+.black-tint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.container {
+  padding: 0 5em; }
+
+.img2 {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 400px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#text {
+  text-align: left; }
+
+#text1 {
+  text-align: justify;
+  font-size: 12px;
+  margin-top: 10px; }
+
+.border {
+  border: 8px solid red;
+  padding: 30px; }
+
+/*# sourceMappingURL=ayodolan.main.css.map */

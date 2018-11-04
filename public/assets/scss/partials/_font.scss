@@ -1,0 +1,77 @@
+
+.bla {
+  color: $black;
+}
+.grey {
+  color: $grey;
+}
+.dr-grey {
+  color: $dark-grey;
+}
+.hl-grey {
+  color: $half-grey;
+}
+.wh {
+  color: $white;
+}
+.blue {
+  color: $blue;
+}
+// font-size
+.smaller {
+  font-size: 0.8em;
+}
+.normal {
+  font-size: 1em;
+}
+.baby-big {
+  font-size: 1.2em!important;
+}
+.big {
+  font-size: 1.5em!important;
+}
+.more-big {
+  font-size: 2.5em!important;
+}
+.bigger {
+  font-size: 3em!important;
+}
+.somewhat-bigger {
+  font-size: 4.5em;
+}
+.text-thin {
+  font-weight: 100;
+}
+.text-extra-light {
+  font-weight: 200;
+}
+.text-light {
+  font-weight: 300;
+}
+.text-regular {
+  font-weight: 400;
+}
+.text-medium {
+  font-weight: 500;
+}
+.text-semi-bold {
+  font-weight: 600;
+}
+.text-bold {
+  font-weight: 700;
+}
+.text-extra-bold {
+  font-weight: 800;
+}
+.text-weight-black {
+  font-weight: 900;
+}
+.text-bold {
+  font-weight: bold!important;
+}
+.text-center {
+  text-align: center!important;
+}
+.line-1 {
+  line-height: 1;
+}
