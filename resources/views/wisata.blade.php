@@ -13,11 +13,18 @@
                 </div>
             </div>
             </div>
+            <div class="container">
+              <div class="row justify-content-around">
+                <div class="col-md-2 mt-5">
+                  <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Buat Post</a>
+                </div>
+              </div>
+            </div>
         </div>
 </section>
 <div class="half-separator"></div>
 <section class="desc">
-    <div class="container">
+    <!-- <div class="container">
     <h3 class="wide-spacing">Related Article</h3>
     <div class="half-separator"></div>
     <div class="row">
@@ -43,32 +50,35 @@
                     <div class="card">
                         <div class="img" style="background-image:url('{{asset('assets/images/budaya.jpg')}}');"></div>
                         <div class="card-body">
-                            <h4 class="card-title mb-0">Budaya.</h4>
+                            <h4 class="card-title mb-0b">Budaya.</h4>
                         </div>
                     </div>
                 </div>
-    </div>
+          </div>
+      </div> -->
+      <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+              <div class="img small-but-not-that-small-round-img mr-4" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
+              <h1 class="text mt-1  ">Pengalamanku di Jogja</h1>
+              <h6 class="text mt-2">Rabu, 07 November 2018</h6>
+              <h6 class="text mt-2">3120 points</h6>
+            </div>
+          </div>
+      </div>
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+  </nav>
 </div>
+      </div>
 </section>
-<div  class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <form action="">
-                <div class="form-group col ">
-                    <label for="exampleFormControlTextarea1">Comment</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
-                </div>
-                <div class="col">
-                        <button type="button" class="btn btn-secondary">Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row p-30">
-        <div class="img small-round-img" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
-    </div>
-</div>
 
 @endsection
