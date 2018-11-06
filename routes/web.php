@@ -24,3 +24,6 @@ Route::get('/wisata', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('/artikel', function () {
+    return view('artikel');
+});

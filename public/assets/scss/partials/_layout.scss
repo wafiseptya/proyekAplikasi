@@ -133,6 +133,33 @@ section {
     z-index: 1;
   }
 }
+.separator1 {
+  height: 35vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-wrap: nowrap;
+
+  h2 {
+    font-size: 3em;
+  }
+  h2::after {
+    background: none repeat scroll 0 0 $black-grey;
+    bottom: -10px;
+    content: "";
+    display: block;
+    height: 4px;
+    position: relative;
+    width: 2em;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    z-index: 1;
+  }
+}
 .big-img {
   height: 60vh;
   background-image: url("/assets/images/7.jpg");

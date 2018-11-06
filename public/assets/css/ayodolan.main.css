@@ -263,6 +263,33 @@ section h4, section small {
   z-index: 1;
 }
 
+.separator1 {
+  height: 35vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-wrap: nowrap;
+}
+.separator1 h2 {
+  font-size: 3em;
+}
+.separator1 h2::after {
+  background: none repeat scroll 0 0 #263238;
+  bottom: -10px;
+  content: "";
+  display: block;
+  height: 4px;
+  position: relative;
+  width: 2em;
+}
+.separator1 p, .separator1 h1, .separator1 h2, .separator1 h3, .separator1 h4, .separator1 h5, .separator1 h6 {
+  font-weight: 400;
+  z-index: 1;
+}
+
 .big-img {
   height: 60vh;
   background-image: url("/assets/images/7.jpg");
