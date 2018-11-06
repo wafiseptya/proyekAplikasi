@@ -11,6 +11,9 @@
 .hl-grey {
   color: $half-grey;
 }
+.bl-grey {
+  color: $black-grey;
+}
 .wh {
   color: $white;
 }
@@ -74,4 +77,13 @@
 }
 .line-1 {
   line-height: 1;
+}
+.line-15 {
+  line-height: 1.5;
+}
+.line-2 {
+  line-height: 2;
+}
+.line-25 {
+  line-height: 2.5;
 }

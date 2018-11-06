@@ -1,6 +1,7 @@
 body, html {
   height: 100%;
   margin: 0;
+  color: $black-grey;
 }
 // ::-webkit-scrollbar { 
 //   display: none; 
@@ -35,6 +36,16 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.round-img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+.small-round-img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
 section {
   min-height: 100vh;
   p, h1, h2, h3, h4, h5, h6 {
@@ -50,6 +61,9 @@ section {
     font-weight: 600;
   }
 }
+.half-separator {
+  height: 15vh;
+}
 .separator {
   height: 35vh;
   background-position: center;
@@ -64,7 +78,7 @@ section {
     font-size: 3em;
   }
   h2::after {
-    background: none repeat scroll 0 0 #000;
+    background: none repeat scroll 0 0 $black-grey;
     bottom: -10px;
     content: "";
     display: block;
@@ -109,15 +123,30 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
 }
-#text {
+.text {
   text-align: left;
 }
-#text1 {
+.text1 {
   text-align: justify;
   font-size: 12px;
   margin-top: 10px;
 }
 .border {
   border : 8px solid red;
+  padding: 30px;
+}
+.small-desc {
+  font-size: 0.85em;
+  line-height: 2.2;
+  letter-spacing: .9px;
+  word-spacing: -.92px;
+  -moz-text-align-last: center; /* Code for Firefox */
+  text-align-last: center;
+}
+.wide-spacing {
+  letter-spacing: 1px;
+  word-spacing: -.92px;
+}
+.p-30 {
   padding: 30px;
 }

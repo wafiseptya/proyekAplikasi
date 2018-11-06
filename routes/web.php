@@ -16,5 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/base', function () {
-    return view('template/base');
+    return view('homepage');
+});
+Route::get('/wisata', function () {
+    return view('wisata');
 });
