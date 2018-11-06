@@ -21,3 +21,6 @@ Route::get('/base', function () {
 Route::get('/wisata', function () {
     return view('wisata');
 });
+Route::get('/profile', function () {
+    return view('profile');
+});
