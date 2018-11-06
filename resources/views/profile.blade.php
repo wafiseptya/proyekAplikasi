@@ -1,155 +1,108 @@
 @extends('template/base')
 @section('content')
-    <section class="header">
-        <div class="container">
-            <div class="row">
-                <div class="black-tint"></div>
-                <div class="title col-12">
-                    <h1 class="text-thin">Ayo Dolan!</h1>
-                </div>
-                <div class="small-desc col-12">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis minus minima laborum ex iste est officiis quam in dignissimos explicabo vel rerum sit labore officia aspernatur, libero ipsa id? Corrupti?</p>
-                </div>
+<section class="banner" style="background-image: url('{{asset('assets/images/yogyakarta.jpg')}}')">
+  <div class="row justify-content-center">
+      <div class="img-banner round-img" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
+  </div>
+</section>
+<div class="half-separator"></div>
+  <div class="container border rounded">
+    <div class="row">
+      <div class="col-md-10 mr-5">
+        <h2 class="text">Data Diri</h2>
+        <h3 class="text mt-3">Nama</h3>
+        <h6 class="text mt-3">TTL Maybe</h6>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Update</a>
+      </div>
+    </div>
+  </div>
+<div class="half-separator"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 border rounded">
+        <div class="img small-but-not-that-small-round-img mr-4" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
+        <h1 class="text mt-1  ">Pengalamanku di Jogja</h1>
+        <h6 class="text mt-2">Rabu, 07 November 2018</h6>
+        <h6 class="text mt-2">3120 points</h6>
+      </div>
+      <div class="col-md-12 mt-5 border rounded">
+        <div class="img small-but-not-that-small-round-img mr-4" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
+        <h1 class="text mt-1  ">Pengalamanku di Jogja</h1>
+        <h6 class="text mt-2">Rabu, 07 November 2018</h6>
+        <h6 class="text mt-2">3120 points</h6>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+<!-- <section class="kategori">
+    <div class="separator">
+        <h2 class="wide-spacing">category name.</h2>
+    </div>
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
             </div>
-        </div>
-    </section>
-    <section class="desc">
-        <div class="separator">
-            <h2 class="wide-spacing">Yogyakarta.</h2>
-        </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="img round-img" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
-            <div class="row justify-content-center mt-5">
-                <div class="col-md-5">
-                    <p class="small-desc text-justify line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat cum quidem eaque doloremque consequatur ex beatae voluptas maxime minus accusamus. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
-                </div>
-
-            </div>
-            </div>
-        </div>
-    </section>
-    <section class="kategori">
-        <div class="separator">
-            <h2 class="wide-spacing">Kategori.</h2>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="card-deck" style="width:100%">
-                    <div class="card">
-                        <div class="img" style="background-image:url('{{asset('assets/images/sejarah2.jpg')}}');"></div>
-                        <div class="card-body">
-                            <h4 class="card-title mb-0">Sejarah.</h4>
-                        </div>
-                        <div class="card-footer">
-                            <h6 class="">more</h6>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="img" style="background-image:url('{{asset('assets/images/alam.jpg')}}');"></div>
-                        <div class="card-body">
-                            <h4 class="card-title mb-0">Alam.</h4>
-                        </div>
-                        <div class="card-footer">
-                            <h6 class="">more</h6>
-                        </div>
-                    </div>
-                    <div class="card">
-                            <div class="img" style="background-image:url('{{asset('assets/images/kuliner1.jpg')}}');"></div>
-                            <div class="card-body">
-                            <h4 class="card-title mb-0">Kuliner.</h4>
-                        </div>
-                        <div class="card-footer">
-                            <h6 class="">more</h6>
-                        </div>
-                    </div>
-                    <div class="card">
-                            <div class="img" style="background-image:url('{{asset('assets/images/budaya.jpg')}}');"></div>
-                            <div class="card-body">
-                            <h4 class="card-title mb-0">Budaya.</h4>
-                        </div>
-                        <div class="card-footer">
-                            <h6 class="">more</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="kategori-extend">
-        <div class="half-separator"></div>
-        <div class="container">
-            <div class="border">
-            <div class="row">
-                <div class="col-sm-6">
-                <div class="col">
-                    <div class="img" style="background-image:url('{{asset('assets/images/budaya.jpg')}}');"></div>
-                </div>
-            </div>
-                <div class="col-sm-6">
-                    <h3 class="text">Budaya.</h3>
-                    <p class="text1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <h6 class="text">Wisata alam!!</h6>
-                </div>
-                </div>
+            <div class="col-md-9">
+                <a class="no-style" href="#">
+                    <h4 class="text-left">wisata title.</h4>
+                </a>
+                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
             </div>
         </div>
 
-        <div class="half-separator"></div>
-        <div class="container">
-            <div class="border">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h3 class="text">Alam</h3>
-                    <p class="text1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <h6 class="text">Wisata alam!!</h6>
-                </div>
-                <div class="col-sm-6">
-                    <div class="col">
-                        <div class="img" style="background-image:url('{{asset('assets/images/pantai.jpg')}}');"></div>
-                    </div>
-                </div>
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/budaya.jpg')}}');"></div>
             </div>
+            <div class="col-md-9">
+                <a class="no-style" href="#">
+                    <h4 class="text-left">wisata title.</h4>
+                </a>
+                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/pantai.jpg')}}');"></div>
+            </div>
+            <div class="col-md-9">
+                <a class="no-style" href="#">
+                    <h4 class="text-left">wisata title.</h4>
+                </a>
+                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/kuliner1.jpg')}}');"></div>
+            </div>
+            <div class="col-md-9">
+                <a class="no-style" href="#">
+                    <h4 class="text-left">wisata title.</h4>
+                </a>
+                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
             </div>
         </div>
 
-        <div class="half-separator"></div>
-        <div class="container">
-            <div class="border">
-            <div class="row">
-                <div class="col sm-6">
-                    <div class="col">
-                        <div class="img" style="background-image:url('{{asset('assets/images/kuliner1.jpg')}}');"></div>
-                    </div>
-                </div>
-                <div class="col sm-6">
-                    <h3 class="text">Kuliner</h3>
-                    <p class="text1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <h6 class="text">Wisata alam!!</h6>
-                </div>
-            </div>
-            </div>
-        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item active"><a class="page-link" href="#">2<span class="sr-only">(current)</span></a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+        </nav>
 
-        <div class="half-separator"></div>
-        <div class="container">
-            <div class="border">
-            <div class="row">
-                <div class="col sm-6">
-                    <h3 class="text">Perbelanjaan</h3>
-                    <p class="text1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <h6 class="text">Wisata alam!!</h6>
-                </div>
-                <div class="col sm-6">
-                    <div class="col">
-                        <div class="img" style="background-image:url('{{asset('assets/images/budaya.jpg')}}');"></div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
+    </div>
+</section> -->
 
-    </section>
-
-    <div class="separator"></div>
 @endsection
