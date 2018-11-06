@@ -11,13 +11,19 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/base', function () {
+Route::get('/', function () {
     return view('homepage');
 });
 Route::get('/wisata', function () {
     return view('wisata');
 });
+Route::get('/kategori', function () {
+    return view('kategori');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

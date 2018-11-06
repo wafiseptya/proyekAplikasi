@@ -46,6 +46,16 @@ body, html {
   width: 60px;
   height: 60px;
 }
+.med-round-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+.flex-round-img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
 section {
   min-height: 100vh;
   p, h1, h2, h3, h4, h5, h6 {
@@ -143,10 +153,36 @@ section {
   -moz-text-align-last: center; /* Code for Firefox */
   text-align-last: center;
 }
+.last-left {
+  -moz-text-align-last: left!important; /* Code for Firefox */
+  text-align-last: left!important;
+}
 .wide-spacing {
   letter-spacing: 1px;
   word-spacing: -.92px;
 }
 .p-30 {
   padding: 30px;
+}
+.navbar {
+  z-index: 99;
+  background-color: $white;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  padding: 0.25rem 1rem!important;
+}
+.nav-link {
+  font-size: 0.9em;
+}
+.navbar-brand {
+  font-size: 1rem!important;
+}
+.kategori {
+  padding: 0em 10em 2em 10em;
+}
+.no-style {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
