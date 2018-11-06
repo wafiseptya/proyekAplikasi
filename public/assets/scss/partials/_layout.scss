@@ -3,8 +3,8 @@ body, html {
   margin: 0;
   color: $black-grey;
 }
-// ::-webkit-scrollbar { 
-//   display: none; 
+// ::-webkit-scrollbar {
+//   display: none;
 // }
 .header {
   background-image: url("/assets/images/4.jpg");
@@ -36,6 +36,15 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.img1 {
+  position: relative;
+  float: left;
+  width:  60px;
+  height: 100px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .round-img {
   border-radius: 50%;
   width: 300px;
@@ -46,16 +55,27 @@ body, html {
   width: 60px;
   height: 60px;
 }
+<<<<<<< HEAD
+=======
+.small-but-not-that-small-round-img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+>>>>>>> db93119c13002a62072738103085508d2fafd140
 .med-round-img {
   border-radius: 50%;
   width: 150px;
   height: 150px;
 }
+<<<<<<< HEAD
 .flex-round-img {
   border-radius: 50%;
   width: 100%;
   height: 100%;
 }
+=======
+>>>>>>> db93119c13002a62072738103085508d2fafd140
 section {
   min-height: 100vh;
   p, h1, h2, h3, h4, h5, h6 {
@@ -74,6 +94,7 @@ section {
 .half-separator {
   height: 15vh;
 }
+
 .separator {
   height: 35vh;
   background-position: center;
@@ -83,7 +104,7 @@ section {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  
+
   h2 {
     font-size: 3em;
   }
@@ -164,6 +185,7 @@ section {
 .p-30 {
   padding: 30px;
 }
+<<<<<<< HEAD
 .navbar {
   z-index: 99;
   background-color: $white;
@@ -186,3 +208,8 @@ section {
     text-decoration: none;
   }
 }
+=======
+.left{
+    padding-top:10dp;
+}
+>>>>>>> db93119c13002a62072738103085508d2fafd140
