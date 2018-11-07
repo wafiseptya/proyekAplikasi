@@ -11,19 +11,28 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/base', function () {
-    return view('homepage');
-});
+Route::resource('/', 'HomepageController')->only([
+    'index'
+]);
+
+Route::get('kategori/{id}/{slug}', 'KategoriController@show');
+
 Route::get('/wisata', function () {
     return view('wisata');
 });
+
 Route::get('/profile', function () {
     return view('profile');
 });
 Route::get('/artikel', function () {
     return view('artikel');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

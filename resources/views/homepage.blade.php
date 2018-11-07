@@ -54,120 +54,52 @@ perguruan tinggi. </p>
         <div class="container">
             <div class="row">
                 <div class="card-deck" style="width:100%">
+                    @foreach ($kategori as $data)
                     <div class="card">
-                        <div class="img" style="background-image:url('{{asset('assets/images/sejarah2.jpg')}}');"></div>
+                        <a href="{{ URL::to("kategori/{$data->id}/{$data->nama_kategori}") }}">
+                            <div class="img" style="background-image:url('{{$data->banner}}');"></div>
+                        </a>
                         <div class="card-body">
-                            <h4 class="card-title mb-0">Sejarah.</h4>
+                            <a href="{{ URL::to("kategori/{$data->id}/{$data->nama_kategori}") }}">
+                                <h4 class="card-title mb-0">{{$data->nama_kategori}}.</h4>
+                            </a>
                         </div>
                         <div class="card-footer">
                             <h6 class="">more</h6>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="img" style="background-image:url('{{asset('assets/images/alam.jpg')}}');"></div>
-                        <div class="card-body">
-                            <h4 class="card-title mb-0">Alam.</h4>
-                        </div>
-                        <div class="card-footer">
-                            <h6 class="">more</h6>
-                        </div>
-                    </div>
-                    <div class="card">
-                            <div class="img" style="background-image:url('{{asset('assets/images/kuliner1.jpg')}}');"></div>
-                            <div class="card-body">
-                            <h4 class="card-title mb-0">Kuliner.</h4>
-                        </div>
-                        <div class="card-footer">
-                            <h6 class="">more</h6>
-                        </div>
-                    </div>
-                    <div class="card">
-                            <div class="img" style="background-image:url('{{asset('assets/images/budaya.jpg')}}');"></div>
-                            <div class="card-body">
-                            <h4 class="card-title mb-0">Budaya.</h4>
-                        </div>
-                        <div class="card-footer">
-                            <h6 class="">more</h6>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
     <section class="kategori-extend">
+        @foreach ($kategori as $data)
         <div class="half-separator"></div>
         <div class="container">
             <div class="border">
             <div class="row">
                 <div class="col-sm-6">
-                <div class="col">
-                    <div class="img" style="background-image:url('{{asset('assets/images/budaya.jpg')}}');"></div>
-                </div>
-            </div>
-                <div class="col-sm-6">
-                    <h3 class="text">Budaya.</h3>
-                    <p class="text1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <h6 class="text">Wisata alam!!</h6>
-                </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="half-separator"></div>
-        <div class="container">
-            <div class="border">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h3 class="text">Alam</h3>
-                    <p class="text1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <h6 class="text">Wisata alam!!</h6>
-                </div>
-                <div class="col-sm-6">
                     <div class="col">
-                        <div class="img" style="background-image:url('{{asset('assets/images/pantai.jpg')}}');"></div>
+                        <a href="{{ URL::to("kategori/{$data->id}/{$data->nama_kategori}") }}">
+                            <div class="img" style="background-image:url('{{$data->banner}}');"></div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            </div>
-        </div>
 
-        <div class="half-separator"></div>
-        <div class="container">
-            <div class="border">
-            <div class="row">
-                <div class="col sm-6">
-                    <div class="col">
-                        <div class="img" style="background-image:url('{{asset('assets/images/kuliner1.jpg')}}');"></div>
-                    </div>
-                </div>
-                <div class="col sm-6">
-                    <h3 class="text">Kuliner</h3>
-                    <p class="text1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <h6 class="text">Wisata alam!!</h6>
+                <div class="col-sm-6">
+                    <a href="{{ URL::to("kategori/{$data->id}/{$data->nama_kategori}") }}">
+                        <h3 class="text">{{$data->nama_kategori}}.</h3>
+                    </a>
+                    <p class="text1">{{$data->deskripsi}}</p>
+
                 </div>
             </div>
             </div>
         </div>
 
-        <div class="half-separator"></div>
-        <div class="container">
-            <div class="border">
-            <div class="row">
-                <div class="col sm-6">
-                    <h3 class="text">Perbelanjaan</h3>
-                    <p class="text1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <h6 class="text">Wisata alam!!</h6>
-                </div>
-                <div class="col sm-6">
-                    <div class="col">
-                        <div class="img" style="background-image:url('{{asset('assets/images/budaya.jpg')}}');"></div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-
-    </section>
-
-    <div class="separator"></div>
+        @endforeach
+        
+    <div class="half-separator"></div>
 @endsection
