@@ -21,6 +21,8 @@ Route::resource('/', 'HomepageController')->only([
 
 Route::get('kategori/{id}/{slug}', 'KategoriController@show');
 
+Route::get('wisata/{id}/{slug}', 'WisataController@show');
+
 Route::get('/wisata', function () {
     return view('wisata');
 });

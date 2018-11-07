@@ -12,4 +12,8 @@ class Wisata extends Model
     {
     	return $this->belongsTo('App\Kategori', 'kategori_id');
     }
+    public function artikel()
+    {
+    	return $this->hasMany('App\Artikel');
+    }
 }

@@ -2,14 +2,14 @@
 @section('content')
 <section class="desc">
         <div class="separator">
-            <h2 class="wide-spacing">Malioboro</h2>
+        <h2 class="wide-spacing">{{$data->nama_wisata}}</h2>
         </div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="img round-img" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
+                <div class="img round-img" style="background-image:url('{{$data->banner}}');"></div>
             <div class="row justify-content-center mt-5">
                 <div class="col-md-5">
-                    <p class="small-desc text-justify line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat cum quidem eaque doloremque consequatur ex beatae voluptas maxime minus accusamus. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
+                    <p class="small-desc text-justify line-2">{{$data->deskripsi}}</p>
                 </div>
             </div>
             </div>
@@ -24,7 +24,7 @@
 </section>
 <div class="half-separator"></div>
 <section class="desc">
-    <!-- <div class="container">
+    {{-- <!-- <div class="container">
     <h3 class="wide-spacing">Related Article</h3>
     <div class="half-separator"></div>
     <div class="row">
@@ -55,7 +55,7 @@
                     </div>
                 </div>
           </div>
-      </div> -->
+      </div> --> --}}
       <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
