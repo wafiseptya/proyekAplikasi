@@ -98,6 +98,12 @@ body, html {
   margin: 0;
   color: #263238; }
 
+a {
+  color: inherit !important;
+  text-decoration: none !important; }
+  a:hover {
+    color: #2196F3; }
+
 .header {
   background-image: url("/assets/images/4.jpg");
   height: 100vh;
@@ -274,7 +280,7 @@ section {
   font-size: 1rem !important; }
 
 .kategori {
-  padding: 0em 10em 2em 10em; }
+  padding: 0em 5em 2em 5em; }
 
 .no-style {
   color: inherit;

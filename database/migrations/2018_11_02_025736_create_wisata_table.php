@@ -16,9 +16,10 @@ class CreateWisataTable extends Migration
         Schema::create('wisata', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_wisata');
-            $table->string('deskripsi');
-            $table->unsignedInteger('id_kategori');
-            $table->foreign('id_kategori')->references('id')->on('kategori')->onUpdate('cascade')->onDelete('cascade');
+            $table->text('deskripsi');
+            $table->string('banner')->default('assets/images/timang.jpg');
+            $table->unsignedInteger('kategori_id');
+            $table->foreign('kategori_id')->references('id')->on('kategori')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

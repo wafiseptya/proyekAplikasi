@@ -15,11 +15,12 @@ class CreateArtikelsTable extends Migration
     {
         Schema::create('artikels', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('banner')->default('assets/images/alam.jpg');
             $table->integer('vote');
             $table->text('judul_artikel');
             $table->longText('isi_artikel');
-            $table->unsignedInteger('id_wisata');
-            $table->foreign('id_wisata')->references('id')->on('wisata')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('wisata_id');
+            $table->foreign('wisata_id')->references('id')->on('wisata')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

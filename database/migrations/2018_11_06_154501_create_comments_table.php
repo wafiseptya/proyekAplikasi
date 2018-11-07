@@ -17,8 +17,8 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->text('value');
             $table->longText('isi_artikel');
-            $table->unsignedInteger('id_artikel');
-            $table->foreign('id_artikel')->references('id')->on('artikels')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('artikel_id');
+            $table->foreign('artikel_id')->references('id')->on('artikels')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

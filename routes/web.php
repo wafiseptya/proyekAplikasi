@@ -15,9 +15,12 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::resource('/', 'HomepageController')->only([
+    'index'
+]);
+
+Route::get('kategori/{id}/{slug}', 'KategoriController@show');
+
 Route::get('/wisata', function () {
     return view('wisata');
 });
