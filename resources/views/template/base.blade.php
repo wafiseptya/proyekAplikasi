@@ -18,7 +18,8 @@
 
     </head>
     <body>
-        
+    @include('template/navbar')
+    
     @yield('content')
         
     </body>

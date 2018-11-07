@@ -3,6 +3,13 @@ body, html {
   margin: 0;
   color: $black-grey;
 }
+a {
+  color: inherit!important;
+  text-decoration: none!important;
+  &:hover {
+    color: $blue;
+  }
+}
 // ::-webkit-scrollbar {
 //   display: none;
 // }
@@ -64,6 +71,11 @@ body, html {
   border-radius: 50%;
   width: 150px;
   height: 150px;
+}
+.flex-round-img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
 }
 section {
   min-height: 100vh;
@@ -163,12 +175,38 @@ section {
   -moz-text-align-last: center; /* Code for Firefox */
   text-align-last: center;
 }
+.last-left {
+  -moz-text-align-last: left!important; /* Code for Firefox */
+  text-align-last: left!important;
+}
 .wide-spacing {
   letter-spacing: 1px;
   word-spacing: -.92px;
 }
 .p-30 {
   padding: 30px;
+}
+.navbar {
+  z-index: 99;
+  background-color: $white;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  padding: 0.25rem 1rem!important;
+}
+.nav-link {
+  font-size: 0.9em;
+}
+.navbar-brand {
+  font-size: 1rem!important;
+}
+.kategori {
+  padding: 0em 5em 2em 5em;
+}
+.no-style {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 .left{
     padding-top:10dp;
