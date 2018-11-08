@@ -28,6 +28,9 @@ Route::get('artikel/{id}/{slug}', 'ArtikelController@show');
 Route::get('/wisata', function () {
     return view('wisata');
 });
+Route::get('/kategori', function () {
+    return view('kategori');
+});
 
 Route::get('/profile', function () {
     return view('profile');
@@ -35,8 +38,9 @@ Route::get('/profile', function () {
 Route::get('/artikel', function () {
     return view('artikel');
 });
-
+Route::get('/makeArtikel', function () {
+    return view('makeArtikel');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
