@@ -99,10 +99,13 @@ body, html {
   color: #263238; }
 
 a {
-  color: inherit !important;
+  color: inherit;
   text-decoration: none !important; }
   a:hover {
     color: #2196F3; }
+
+.color-inherit {
+  color: inherit !important; }
 
 .banner {
   background-image: url("/assets/images/4.jpg");
@@ -115,8 +118,7 @@ a {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  padding: 0 15em;
-}
+  padding: 0 15em; }
 
 .header {
   background-image: url("/assets/images/4.jpg");
@@ -151,8 +153,7 @@ a {
   height: 200px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: cover;
-}
+  background-size: cover; }
 
 .img1 {
   position: relative;
@@ -177,6 +178,11 @@ a {
   border-radius: 50%;
   width: 100px;
   height: 100px; }
+
+.small-but-not-that-small-but-smaller-round-img {
+  border-radius: 50%;
+  width: 75px;
+  height: 75px; }
 
 .med-round-img {
   border-radius: 50%;
@@ -235,24 +241,20 @@ section {
   display: flex;
   align-items: center;
   justify-content: left;
-  flex-wrap: nowrap;
-}
-.separator1 h2 {
-  font-size: 3em;
-}
-.separator1 h2::after {
-  background: none repeat scroll 0 0 #263238;
-  bottom: -10px;
-  content: "";
-  display: block;
-  height: 4px;
-  position: relative;
-  width: 2em;
-}
-.separator1 p, .separator1 h1, .separator1 h2, .separator1 h3, .separator1 h4, .separator1 h5, .separator1 h6 {
-  font-weight: 400;
-  z-index: 1;
-}
+  flex-wrap: nowrap; }
+  .separator1 h2 {
+    font-size: 3em; }
+  .separator1 h2::after {
+    background: none repeat scroll 0 0 #263238;
+    bottom: -10px;
+    content: "";
+    display: block;
+    height: 4px;
+    position: relative;
+    width: 2em; }
+  .separator1 p, .separator1 h1, .separator1 h2, .separator1 h3, .separator1 h4, .separator1 h5, .separator1 h6 {
+    font-weight: 400;
+    z-index: 1; }
 
 .big-img {
   height: 60vh;
