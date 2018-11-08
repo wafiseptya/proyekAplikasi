@@ -16,69 +16,31 @@
             <div class="container">
               <div class="row justify-content-around">
                 <div class="col-md-2 mt-5">
-                  <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Buat Post</a>
+                  <a href="#" class="btn btn-primary btn-lg wh" role="button" aria-pressed="true">Create Article</a>
                 </div>
               </div>
             </div>
         </div>
 </section>
-<div class="half-separator"></div>
-<section class="desc">
-    {{-- <!-- <div class="container">
-    <h3 class="wide-spacing">Related Article</h3>
-    <div class="half-separator"></div>
-    <div class="row">
-            <div class="card-deck" style="width:100%">
-                    <div class="card">
-                        <div class="img" style="background-image:url('{{asset('assets/images/sejarah2.jpg')}}');"></div>
-                        <div class="card-body">
-                            <h4 class="card-title mb-0">Sejarah.</h4>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="img" style="background-image:url('{{asset('assets/images/alam.jpg')}}');"></div>
-                        <div class="card-body">
-                            <h4 class="card-title mb-0">Alam.</h4>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="img" style="background-image:url('{{asset('assets/images/kuliner1.jpg')}}');"></div>
-                        <div class="card-body">
-                            <h4 class="card-title mb-0">Kuliner.</h4>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="img" style="background-image:url('{{asset('assets/images/budaya.jpg')}}');"></div>
-                        <div class="card-body">
-                            <h4 class="card-title mb-0b">Budaya.</h4>
-                        </div>
-                    </div>
+<section class="desc mt-5">
+    <div class="container mt-5">
+        <h2 class="text-left">Article's about this place</h2>
+        <div class="row mt-5 mb-5">
+            @foreach ($artikel as $item)
+            <a href="{{ URL::to("artikel/{$item->id}/{$item->judul_artikel}") }}" style="width:100%; padding:15px 30px;" class="color-inherit border">
+                <div class="col-md-12">
+                    <div class="img small-but-not-that-small-but-smaller-round-img mr-4" style="background-image:url('{{$item->banner}}');"></div>
+                        <h4 class="text mt-1  ">{{ $item->judul_artikel }}</h4>
+                        <p class="text mt-2 smaller">{{ $item->created_at->format('d F Y H:i' ) }}</p>
+                        <p class="text smaller">{{ $item->vote }} likes</p>
                 </div>
-          </div>
-      </div> --> --}}
-      <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-12">
-              <div class="img small-but-not-that-small-round-img mr-4" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
-              <h1 class="text mt-1  ">Pengalamanku di Jogja</h1>
-              <h6 class="text mt-2">Rabu, 07 November 2018</h6>
-              <h6 class="text mt-2">3120 points</h6>
-            </div>
-          </div>
+            </a>
+            @endforeach
+        </div>
       </div>
-      <div class="container mt-5">
-        <div class="row justify-content-center">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-  </nav>
-</div>
-      </div>
+      <div class="row justify-content-center">
+            {{ $artikel->links() }}
+        </div>
 </section>
 
 @endsection

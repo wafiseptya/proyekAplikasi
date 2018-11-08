@@ -60,7 +60,7 @@ perguruan tinggi. </p>
                             <div class="img" style="background-image:url('{{$data->banner}}');"></div>
                         </a>
                         <div class="card-body">
-                            <a href="{{ URL::to("kategori/{$data->id}/{$data->nama_kategori}") }}">
+                            <a class="color-inherit" href="{{ URL::to("kategori/{$data->id}/{$data->nama_kategori}") }}">
                                 <h4 class="card-title mb-0">{{$data->nama_kategori}}.</h4>
                             </a>
                         </div>
@@ -82,14 +82,14 @@ perguruan tinggi. </p>
                 <div class="col-sm-6">
 
                     <div class="col">
-                        <a href="{{ URL::to("kategori/{$data->id}/{$data->nama_kategori}") }}">
+                        <a class="color-inherit" href="{{ URL::to("kategori/{$data->id}/{$data->nama_kategori}") }}">
                             <div class="img" style="background-image:url('{{$data->banner}}');"></div>
                         </a>
                     </div>
                 </div>
 
                 <div class="col-sm-6">
-                    <a href="{{ URL::to("kategori/{$data->id}/{$data->nama_kategori}") }}">
+                    <a class="color-inherit" href="{{ URL::to("kategori/{$data->id}/{$data->nama_kategori}") }}">
                         <h3 class="text">{{$data->nama_kategori}}.</h3>
                     </a>
                     <p class="text1">{{$data->deskripsi}}</p>

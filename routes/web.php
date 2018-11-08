@@ -23,6 +23,8 @@ Route::get('kategori/{id}/{slug}', 'KategoriController@show');
 
 Route::get('wisata/{id}/{slug}', 'WisataController@show');
 
+Route::get('artikel/{id}/{slug}', 'ArtikelController@show');
+
 Route::get('/wisata', function () {
     return view('wisata');
 });

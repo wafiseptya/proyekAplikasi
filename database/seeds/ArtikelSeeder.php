@@ -12,17 +12,17 @@ class ArtikelSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create(); //import library faker
-        $limit = 25; //batasan berapa banyak data
+        $limit = 100; //batasan berapa banyak data
         
         for ($i = 0; $i < $limit; $i++) {
             DB::table('artikels')->insert([
                 'judul_artikel'=>$faker->catchPhrase,
-                'isi_artikel' => $faker->realText($maxNbChars = 2048),
-                'banner' => $faker->imageUrl($width = 640, $height = 480),
-                'wisata_id' => $faker->numberBetween($min = 1, $max = 5),
+                'isi_artikel' => $faker->realText($maxNbChars = 4096),
                 'vote' => $faker->numberBetween($min = 1, $max = 5000),
-                'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s"),
+                'banner' => $faker->imageUrl($width = 640, $height = 480),
+                'wisata_id' => $faker->numberBetween($min = 1, $max = 20),
+                'users_id' => $faker->numberBetween($min = 1, $max = 5),
+                'created_at' => $faker->dateTimeThisYear($max = 'now'),
                
             ]);
         }

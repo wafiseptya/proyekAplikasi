@@ -11,4 +11,8 @@ class Artikel extends Model
     {
     	return $this->belongsTo('App\Wisata', 'wisata_id');
     }
+    public function user()
+    {
+    	return $this->belongsTo('App\User', 'users_id');
+    }
 }
