@@ -16,7 +16,7 @@
             <div class="container">
               <div class="row justify-content-around">
                 <div class="col-md-2 mt-5">
-                  <a href="#" class="btn btn-primary btn-lg wh" role="button" aria-pressed="true">Create Article</a>
+                  <a href="{{ route('artikel.create', ['artikel' => $data->id]) }}" class="btn btn-primary btn-lg wh" role="button" aria-pressed="true">Create Article</a>
                 </div>
               </div>
             </div>

@@ -23,7 +23,9 @@ Route::get('kategori/{id}/{slug}', 'KategoriController@show');
 
 Route::get('wisata/{id}/{slug}', 'WisataController@show');
 
-Route::get('artikel/{id}/{slug}', 'ArtikelController@show');
+Route::get('artikel/{id}/{slug}', 'ArtikelController@show')->name('artikel.show');
+Route::post('artikel', 'ArtikelController@store')->name('artikel.store')->middleware('auth');
+Route::get('create/{artikel}', 'ArtikelController@create')->name('artikel.create')->middleware('auth');
 
 Route::get('/wisata', function () {
     return view('wisata');
@@ -34,12 +36,6 @@ Route::get('/kategori', function () {
 
 Route::get('/profile', function () {
     return view('profile');
-});
-Route::get('/artikel', function () {
-    return view('artikel');
-});
-Route::get('/makeArtikel', function () {
-    return view('makeArtikel');
 });
 Auth::routes();
 

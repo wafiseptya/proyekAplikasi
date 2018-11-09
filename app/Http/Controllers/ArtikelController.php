@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Artikel;
 use App\User;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class ArtikelController extends Controller
 {
@@ -24,9 +25,10 @@ class ArtikelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $uid = auth()->id();
+        return view('makeArtikel', compact('id', 'uid'));
     }
 
     /**
@@ -37,7 +39,19 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Artikel;
+        $data->judul_artikel = $request->judul_artikel;
+        $data->isi_artikel = $request->isi_artikel;
+        $data->banner = $request->banner;
+        $data->wisata_id = $request->wisata_id;
+        $data->users_id = $request->users_id;
+        
+        $avatarFileName = 'banner-'.time().'.'.request()->banner->getClientOriginalExtension();
+        $data->banner = $avatarFileName;
+        request()->banner->move(public_path('banner'), $avatarFileName);
+        
+        $data->save();
+        return redirect('artikel/'.$data->id.'/'.$data->judul_artikel);
     }
 
     /**
@@ -51,11 +65,12 @@ class ArtikelController extends Controller
         $data = Artikel::find($id);
         $user = User::find($data->users_id);
         $wisata_id = Artikel::find($id)->wisata_id;
+        $wisata = Artikel::find($id)->wisata()->first();
         $related = Artikel::where('wisata_id', $wisata_id)
         ->orderBy('vote', 'desc')
         ->take(4)
         ->get();
-	    return view('artikel', compact('data', 'user', 'related'));
+	    return view('artikel', compact('data', 'user', 'wisata', 'related'));
     }
 
     /**
