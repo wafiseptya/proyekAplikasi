@@ -17,7 +17,7 @@ class CreateArtikelsTable extends Migration
             $table->increments('id');
             $table->text('judul_artikel');
             $table->longText('isi_artikel');
-            $table->integer('vote');
+            $table->integer('vote')->nullable;
             $table->string('banner')->default('assets/images/alam.jpg');
             $table->unsignedInteger('wisata_id');
             $table->foreign('wisata_id')->references('id')->on('wisata')->onUpdate('cascade')->onDelete('cascade');

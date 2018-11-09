@@ -24,11 +24,12 @@
     <div class="row ">
       <div class="col-md-12 mt-5">
         <h1 class="test mb-5">{{ $data->judul_artikel }}</h1>
-        <div class="img mb-4" style="background-image:url('{{$data->banner}}');"></div>
+        <div class="img mb-4" style="background-image:url('/banner/@if (is_null($data->banner)){{$wisata->banner}}');"@else{{$data->banner}}');"@endif
+        ></div>
       </div>
       <div class="row justify-content-center">
         <div class="col-md-11">
-          <p class="text-justify">{{ $data->isi_artikel }}</p>
+          {!! $data->isi_artikel !!}
 
         </div>
       </div>
