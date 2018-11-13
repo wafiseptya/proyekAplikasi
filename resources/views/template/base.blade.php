@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/bootstrap.min.css')}}">
         {{-- normalize --}}
         <link rel="stylesheet" href="{{asset('assets/css/normalize.css')}}">
+        {{-- fontawesome --}}
+        <link rel="stylesheet" href="{{asset('assets/vendor/fontawesome/css/all.css')}}">
 
         {{-- FONT HERE --}}
         <link href="https://fonts.googleapis.com/css?family=Lato:100,200,400|Montserrat:200,400,600" rel="stylesheet">
@@ -29,6 +31,8 @@
     <script src="{{asset('assets/js/main.js')}}"></script>
     <!-- bootstrap -->
     <script src="{{asset('assets/vendor/bootstrap/bootstrap.min.js')}}"></script>
+    {{-- fontawesome --}}
+    <script src="{{asset('assets/vendor/fontawesome/js/all.css')}}"></script>
     {{-- nicescroll --}}
     <script src="{{asset('assets/vendor/nicescroll/jquery.nicescroll.min.js')}}"></script>
 </html>

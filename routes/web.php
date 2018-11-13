@@ -34,9 +34,14 @@ Route::get('/kategori', function () {
     return view('kategori');
 });
 
+Route::get('profile/{profile}', 'ProfileController@show')->name('profile.show');
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('/admin', function () {
+    return view('admin/content1');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

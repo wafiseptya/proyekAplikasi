@@ -12,19 +12,25 @@
 </div>
   <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-10">
         <div class="img small-round-img mr-4" style="background-image:url('{{$user->avatar}}');"></div>
           <h5 class="text ">{{ $user->name }}</h5>
           <h6 class="text">{{ $data->created_at->format('d F Y H:i' ) }}</h6>
           <h6 class="text">{{ $data->vote }} likes</h6>
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-lg btn-success btn-block"><i class="far fa-thumbs-up"></i></button>
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-lg btn-danger btn-block"><i class="far fa-thumbs-down"></i></button>
         </div>
       </div>
   </div>
   <div class="container">
     <div class="row ">
       <div class="col-md-12 mt-5">
-        <h1 class="test mb-5">{{ $data->judul_artikel }}</h1>
-        <div class="img mb-4" style="background-image:url('/banner/@if (is_null($data->banner)){{$wisata->banner}}');"@else{{$data->banner}}');"@endif
+        <h1 class="test mb-5 text-left">{{ $data->judul_artikel }}</h1>
+        <div class="img mb-4" style="background-image:url('@if (is_null($data->banner)){{$wisata->banner}}');"@else{{$data->banner}}');"@endif
         ></div>
       </div>
       <div class="row justify-content-center">

@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-md-10 mr-5">
         <h2 class="text">Data Diri</h2>
-        <h3 class="text mt-3">Nama</h3>
+        <h3 class="text mt-3">{{$data->name}}</h3>
         <h6 class="text mt-3">TTL Maybe</h6>
       </div>
       <div class="col-md-1">
@@ -21,20 +21,15 @@
 <div class="half-separator"></div>
   <div class="container">
     <div class="row">
-      <div class="col-md-12 border rounded">
-        <div class="img small-but-not-that-small-round-img mr-4" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
-        <h1 class="text mt-1  ">Pengalamanku di Jogja</h1>
-        <h6 class="text mt-2">Rabu, 07 November 2018</h6>
-        <h6 class="text mt-2">3120 points</h6>
-      </div>
-      <div class="col-md-12 mt-5 border rounded">
-        <div class="img small-but-not-that-small-round-img mr-4" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
-        <h1 class="text mt-1  ">Pengalamanku di Jogja</h1>
-        <h6 class="text mt-2">Rabu, 07 November 2018</h6>
-        <h6 class="text mt-2">3120 points</h6>
-      </div>
-      </div>
-      </div>
+        @foreach ($artikel as $item)
+        <div class="col-md-12 border rounded">
+          <div class="img small-but-not-that-small-round-img mr-4" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
+          <h1 class="text mt-1  ">{{$item->judul_artikel}}</h1>
+          <h6 class="text mt-2">{{ $item->created_at->format('d F Y H:i' ) }}</h6>
+          <h6 class="text mt-2">{{$item->vote}}</h6>
+        </div>
+        @endforeach
+        {{ $artikel->links() }}
     </div>
   </div>
 <!-- <section class="kategori">
