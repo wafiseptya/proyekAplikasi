@@ -39,7 +39,7 @@ Route::get('/profile', function () {
     return view('profile');
 });
 Route::get('/admin', function () {
-    return view('admin/content1');
+    return view('admin/tambahWisata');
 });
 
 Auth::routes();
