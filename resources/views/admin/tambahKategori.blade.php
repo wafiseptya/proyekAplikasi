@@ -57,7 +57,7 @@
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
 
-              <h3 class="box-title">Wisata</h3>
+              <h3 class="box-title">Kategori</h3>
 
               <div class="box-tools pull-right">
                 <ul class="pagination pagination-sm inline">
@@ -84,19 +84,15 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Nama Kategori</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Wisata">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kategori">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Deskripsi</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Deskripsi">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Jumlah Wisata</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Banner</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="exampleInputPassword1">Foto</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>

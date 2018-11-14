@@ -41,7 +41,15 @@ Route::get('/profile', function () {
 Route::get('/admin', function () {
     return view('admin/tambahWisata');
 });
-
+Route::get('/admin1', function () {
+    return view('admin/tambahKategori');
+});
+Route::get('/admin2', function () {
+    return view('admin/listWisata');
+});
+Route::get('/admin3', function () {
+    return view('admin/listKategori');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

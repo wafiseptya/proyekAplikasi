@@ -57,7 +57,7 @@
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
 
-              <h3 class="box-title">Wisata</h3>
+              <h3 class="box-title">Daftar Wisata</h3>
 
               <div class="box-tools pull-right">
                 <ul class="pagination pagination-sm inline">
@@ -70,35 +70,36 @@
               </div>
             </div>
           </div>
+          <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Nama_Wisata</th>
+                    <th>Deskripsi</th>
+                    <th>Kategori</th>
+                    <th>Banner</th>
+                    <th>Aksi</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Malioboro</td>
+                        <td>Awesome</td>
+                        <td>Alam</td>
+                        <td>Foto</td>
+                        <td>
+                            <form action="" method="post">
+                                <a href="#" class=" btn btn-sm btn-primary">Edit</a>
+                                <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="form-group">
+                <button type="submit" class="btn btn-sm btn-primary">Tambah</button>
+            </div>
 
-        <form>
-        	<div class="form-group">
-            <label for="exampleInputPassword1">Kategori</label>
-            </p>
-            <select name="cars">
-              <option value="volvo">Sejarah</option>
-              <option value="saab">Alam</option>
-              <option value="fiat">Kuliner</option>
-              <option value="audi">Perbelanjaan</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Nama Kategori</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Wisata">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Deskripsi</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Jumlah Wisata</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Banner</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
 </section>
 @endsection
