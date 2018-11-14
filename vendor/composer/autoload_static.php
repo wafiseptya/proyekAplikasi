@@ -340,6 +340,7 @@ class ComposerStaticInit8960ab792332e5a03cdc18dd998d760f
     );
 
     public static $classMap = array (
+        'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Artikel' => __DIR__ . '/../..' . '/app/Artikel.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -354,6 +355,7 @@ class ComposerStaticInit8960ab792332e5a03cdc18dd998d760f
         'App\\Http\\Controllers\\HomepageController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomepageController.php',
         'App\\Http\\Controllers\\KategoriController' => __DIR__ . '/../..' . '/app/Http/Controllers/KategoriController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\WisataController' => __DIR__ . '/../..' . '/app/Http/Controllers/WisataController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
