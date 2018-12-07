@@ -42,12 +42,12 @@ class ArtikelController extends Controller
         $data = new Artikel;
         $data->judul_artikel = $request->judul_artikel;
         $data->isi_artikel = $request->isi_artikel;
-        $data->banner = $request->banner;
         $data->wisata_id = $request->wisata_id;
         $data->users_id = $request->users_id;
         
         $avatarFileName = 'banner-'.time().'.'.request()->banner->getClientOriginalExtension();
-        $data->banner = $avatarFileName;
+        $path = asset('banner').'/'.$avatarFileName;
+        $data->banner = $path;
         request()->banner->move(public_path('banner'), $avatarFileName);
         
         $data->save();

@@ -5,7 +5,7 @@
   <script>
     tinymce.init({ 
       selector:'textarea',
-      extended_valid_elements: '|p|strong|img[class=myclass|!src|border:0|alt|title|width|height|style]',
+      extended_valid_elements: '|p|b|img[class=myclass|!src|border:0|alt|title|width|height|style]',
     });
   </script>
 </head>

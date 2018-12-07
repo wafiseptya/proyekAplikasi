@@ -19,6 +19,14 @@ Route::resource('/', 'HomepageController')->only([
     'index'
 ]);
 
+//admin
+Route::prefix('admin')->group(function() {
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+    Route::get('/home', 'AdminController@index')->name('admin.dashboard');
+});
+
 Route::get('kategori/{id}/{slug}', 'KategoriController@show');
 
 Route::get('wisata/{id}/{slug}', 'WisataController@show');
@@ -34,9 +42,14 @@ Route::get('/kategori', function () {
     return view('kategori');
 });
 
+Route::get('profile/{profile}', 'ProfileController@show')->name('profile.show');
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('/admin', function () {
+    return view('admin/content1');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

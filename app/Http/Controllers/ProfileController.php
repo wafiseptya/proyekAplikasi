@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class ProfileController extends Controller
 {
@@ -43,9 +44,12 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($username)
     {
-        //
+        $data = User::where('username', $username)->first();
+        $id = $data->id;
+        $artikel = User::find($id)->artikel()->paginate(5);
+        return view('profile', compact('data', 'artikel'));
     }
 
     /**
