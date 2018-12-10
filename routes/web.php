@@ -24,7 +24,13 @@ Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
-    Route::get('/home', 'AdminController@index')->name('admin.dashboard');
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+    Route::get('/wisata', 'AdminController@wisata')->name('admin.wisata');
+    Route::get('/wisata/tambah', 'AdminController@tambahWisata')->name('admin.tambahWisata');
+    Route::get('/wisata/{id}/edit', 'AdminController@editWisata')->name('admin.editWisata');
+    Route::post('/wisata', 'AdminController@storeWisata')->name('admin.storeWisata');
+    Route::match(['put', 'patch'], '/wisata/{id}/update', 'AdminController@updateWisata')->name('admin.updateWisata');
+    Route::delete('/wisata/{id}', 'AdminController@destroyWisata')->name('admin.destroyWisata');
 });
 
 Route::get('kategori/{id}/{slug}', 'KategoriController@show');
@@ -42,13 +48,10 @@ Route::get('/kategori', function () {
     return view('kategori');
 });
 
-Route::get('profile/{profile}', 'ProfileController@show')->name('profile.show');
-Route::get('/profile', function () {
-    return view('profile');
-});
-Route::get('/admin', function () {
-    return view('admin/content1');
-});
+Route::get('profile/{profile}', 'UserController@show')->name('profile.show');
+Route::resource('profile', 'UserController')->except([
+    'show'
+]);   
 
 Auth::routes();
 

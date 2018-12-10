@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\User;
+use Illuminate\Support\Facades\Input;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
-class ProfileController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +18,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        $data = auth()->user();
+        $id = auth()->user()->id;
+        $artikel = User::find($id)->artikel()->paginate(5);
+        return view('profile', compact('data', 'artikel'));
     }
 
     /**
@@ -80,7 +87,6 @@ class ProfileController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'password' => 'string|min:6|confirmed',
             'avatar' => 'mimes:jpeg,jpg,png',
         ]);
     }
@@ -91,7 +97,6 @@ class ProfileController extends Controller
         $data = User::findOrFail($id);
 
         $data->name = $request->name;
-        $data->username = $request->username;
         if($request->password){
             $data->password = bcrypt($request->password);
         }
@@ -104,14 +109,12 @@ class ProfileController extends Controller
             $filePath = '/avatar/'.$avatarFileName;
             $data->avatar = $filePath;
         }
-        $data->role = $request->role;
         $data->updated_at = Carbon::now();
         $data->save();
 
         return redirect()->route('profile.index')->with('alert','User Berhasil Diperbarui!');
 
     }
-
     /**
      * Remove the specified resource from storage.
      *
