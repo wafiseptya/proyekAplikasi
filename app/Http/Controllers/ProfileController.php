@@ -49,7 +49,7 @@ class ProfileController extends Controller
         $data = User::where('username', $username)->first();
         $id = $data->id;
         $artikel = User::find($id)->artikel()->paginate(5);
-        return view('profile', compact('data', 'artikel'));
+        return view('ne', compact('data', 'artikel'));
     }
 
     /**
