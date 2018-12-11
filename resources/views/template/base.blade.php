@@ -35,4 +35,7 @@
     <script src="{{asset('assets/vendor/fontawesome/js/all.css')}}"></script>
     {{-- nicescroll --}}
     <script src="{{asset('assets/vendor/nicescroll/jquery.nicescroll.min.js')}}"></script>
+
+    @yield('js')
+
 </html>

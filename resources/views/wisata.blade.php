@@ -7,9 +7,10 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="img round-img" style="background-image:url('{{$data->banner}}');"></div>
-            <div class="row justify-content-center mt-5">
+                <div class="w-100"></div>
+            <div class="row justify-content-center mt-5" style="width:100%;">
                 <div class="col-md-5">
-                    <p class="small-desc text-justify line-2">{{$data->deskripsi}}</p>
+                    <p class="small-desc text-justify line-2">{!! $data->deskripsi !!}</p>
                 </div>
             </div>
             </div>
