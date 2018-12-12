@@ -17,11 +17,25 @@
           <h5 class="text ">{{ $user->name }}</h5>
           
         </div>
-        <div class="col-md-1">
-          <button class="btn btn-lg btn-success btn-block"><i class="far fa-thumbs-up"></i></button>
+        <div class="col-md-1 col-sm-2">
+          <form id="like-form" action="{{ route('artikel.like', ['id' => $data->id]) }}" method="POST" style="display: none;">
+              @csrf
+          </form>
+          <a class="btn btn-lg btn-success btn-block" href="{{ route('artikel.like', ['id' => $data->id]) }}"
+              onclick="event.preventDefault();
+                            document.getElementById('like-form').submit();">
+              <i class="far fa-thumbs-up"></i>
+          </a>
         </div>
-        <div class="col-md-1">
-            <button class="btn btn-lg btn-danger btn-block"><i class="far fa-thumbs-down"></i></button>
+        <div class="col-md-1 col-sm-2">
+          <form id="dislike-form" action="{{ route('artikel.dislike', ['id' => $data->id]) }}" method="POST" style="display: none;">
+              @csrf
+          </form>
+          <a class="btn btn-lg btn-danger btn-block" href="{{ route('artikel.dislike', ['id' => $data->id]) }}"
+              onclick="event.preventDefault();
+                            document.getElementById('dislike-form').submit();">
+              <i class="far fa-thumbs-down"></i>
+          </a>
         </div>
       </div>
   </div>
@@ -62,6 +76,30 @@
       @endforeach
     </div>
   </div>
+  <h3 class="wide-spacing my-5">Comments</h3>
+  <div class="row px-4">
+    <div class="card-group" style="width:100%">
+      @foreach ($comments as $comment)
+      <div class="col-md-12 border p-0 rounded">
+        <div class="card-header">
+          <div class="img small-round-img mr-4" style="background-image:url('{{asset($comment->user->avatar)}}'); height: 42px; width: 42px;"></div>
+          <a style="color:initial;" href="{{ route('profile.show', ['username' => $comment->user->username]) }}">
+            <p class="text small">{{$comment->user->name}}</p>
+          </a>
+          <p class="text mt-1 small">{{ $comment->created_at->format('d F Y H:i' ) }}</p>
+        </div>
+        <div class="card-body">
+          <p class="text">{{$comment->value}}</p>
+        </div>
+      </div>
+      @endforeach
+      <div class="mt-2 w-100">
+        <div class="row justify-content-center">
+          {{ $comments->links() }}
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 </section>
@@ -69,16 +107,18 @@
 <div  class="container pt-5">
     <div class="row">
         <div class="col-sm-12">
-            <form action="">
+            <form  id="comment-form" action="{{ route('artikel.comment', ['id' => $data->id, 'uid' => Auth::user()->id]) }}" method="POST">
                 <div class="form-group col ">
-                    <label for="exampleFormControlTextarea1">Comment</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                    @csrf
+                    <label for="comment">Comment</label>
+                    <textarea class="form-control" name="value" id="comment" rows="6" placeholder="Comment Here"></textarea>
                 </div>
                 <div class="col">
-                        <button type="button" class="btn btn-secondary">Submit</button>
+                        <button type="submit" class="btn btn-secondary">Submit</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 <div class="separator"></div>
+@endsection

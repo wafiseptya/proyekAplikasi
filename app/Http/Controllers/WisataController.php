@@ -80,4 +80,13 @@ class WisataController extends Controller
     {
         //
     }
+
+    public function like($id)
+    {
+        $data = Wisata::findOrFail($id);
+        $curVote = $data->vote + 1;
+        $data->vote = $curVote;
+        $data->save();
+        return redirect()->back()->with('flash_success', 'Liked!');
+    }
 }

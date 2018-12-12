@@ -40,8 +40,8 @@
         </div>
       </div>
       <div class="row justify-content-center">
-            {{ $artikel->links() }}
-        </div>
+        {{ $artikel->links() }}
+      </div>
 </section>
 
 @endsection

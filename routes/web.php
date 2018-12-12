@@ -39,6 +39,12 @@ Route::get('wisata/{id}/{slug}', 'WisataController@show');
 
 Route::get('artikel/{id}/{slug}', 'ArtikelController@show')->name('artikel.show');
 Route::post('artikel', 'ArtikelController@store')->name('artikel.store')->middleware('auth');
+
+Route::post('artikel/{id}/{uid}/comment', 'ArtikelController@comment')->name('artikel.comment');
+
+Route::post('artikel/{id}/like', 'ArtikelController@like')->name('artikel.like');
+Route::post('artikel/{id}/dislike', 'ArtikelController@dislike')->name('artikel.dislike');
+
 Route::get('create/{artikel}', 'ArtikelController@create')->name('artikel.create')->middleware('auth');
 
 Route::get('/wisata', function () {

@@ -21,7 +21,7 @@ class UserController extends Controller
         $data = auth()->user();
         $id = auth()->user()->id;
         $artikel = User::find($id)->artikel()->paginate(5);
-        return view('profile', compact('data', 'artikel'));
+        return view('newp', compact('data', 'artikel'));
     }
 
     /**

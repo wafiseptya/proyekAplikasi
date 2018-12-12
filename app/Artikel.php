@@ -11,6 +11,10 @@ class Artikel extends Model
     {
     	return $this->belongsTo('App\Wisata', 'wisata_id');
     }
+    public function komentar()
+    {
+        return $this->hasMany('App\Comment');
+    }
     public function users()
     {
     	return $this->belongsTo('App\User', 'users_id');

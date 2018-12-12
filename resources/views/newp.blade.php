@@ -21,18 +21,18 @@
         <div class="half-separator"></div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                     <div class="center-bg-img med-round-img m-auto" style="background-image:url('{{asset($data->avatar)}}');"></div>
                     <h3 class="text text-center mt-3">{{$data->name}}</h3>
                     <h6 class="text text-center mt-3">About</h6>
-                    <h6 class="text text-center mb-5 mt-3 big">Articles</h6>
+                    <a href="#" class="btn btn-dark btn-lg mt-3" role="button" aria-pressed="true" data-toggle="modal" data-target="#modalUpdate" >Update</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true" data-toggle="modal" data-target="#modalUpdate" >Update</a>
                 </div>
             </div>
         </div>
         <div class="container">
+            <h6 class="text mb-3 mt-3 big">Articles</h6>
             <div class="row">
                 @foreach ($artikel as $item)
                 <a href="{{ URL::to("artikel/{$item->id}/{$item->judul_artikel}") }}" style="width:100%; color:initial; font-size:0.6rem;">
@@ -206,8 +206,15 @@
 </div>
 
 @endsection
-@section('js')
-<script>
 
+@section('js')
+
+<script>
+$('#avaPhoto').on('change',function(){
+    //get the file name
+    var fileName = document.getElementById("avaPhoto").files[0].name;
+    //replace the "Choose a file" label
+    $(this).next('.custom-file-label').html(fileName);
+})
 </script>
 @endsection
