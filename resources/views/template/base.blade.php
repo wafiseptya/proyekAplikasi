@@ -18,6 +18,8 @@
         {{-- FONT HERE --}}
         <link href="https://fonts.googleapis.com/css?family=Lato:100,200,400|Montserrat:200,400,600" rel="stylesheet">
 
+        @yield('css')
+
     </head>
     <body>
     @include('template/navbar')

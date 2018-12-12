@@ -38,7 +38,7 @@
               </div>
               <div class="form-group">
                 <label for="deskripsi">Deskripsi Wisata</label>
-                <textarea name="deskripsi" class="write" placeholder="Masukkan Deskripsi Wisata">{{$item->deskripsi}}</textarea>
+                <textarea name="deskripsi" class="form-control" rows="5" placeholder="Masukkan Deskripsi Wisata">{{$item->deskripsi}}</textarea>
               </div>
             </div>
             <!-- /.box-body -->
@@ -56,12 +56,4 @@
 </section>
 @endsection
 @section('js')
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=5iew2cq4xiayo57rrd2pmbhusyia2vaitlxekl5eqoxeh0wi"></script>
-<script>
-  tinymce.init({ 
-    selector:'textarea',
-    height: 200,
-    extended_valid_elements: '|p|b|img[class=myclass|!src|border:0|alt|title|width|height|style]',
-  });
-</script>
 @endsection

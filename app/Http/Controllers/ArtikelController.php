@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Artikel;
 use App\User;
+use App\Comment;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class ArtikelController extends Controller
@@ -70,7 +72,8 @@ class ArtikelController extends Controller
         ->orderBy('vote', 'desc')
         ->take(4)
         ->get();
-	    return view('artikel', compact('data', 'user', 'wisata', 'related'));
+        $comments = Artikel::find($id)->komentar()->orderBy('created_at', 'desc')->paginate(5);
+	    return view('artikel', compact('comments','data', 'user', 'wisata', 'related'));
     }
 
     /**
@@ -105,5 +108,33 @@ class ArtikelController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function like($id)
+    {
+        $data = Artikel::findOrFail($id);
+        $curVote = $data->vote + 1;
+        $data->vote = $curVote;
+        $data->save();
+        return redirect()->back()->with('flash_success', 'Liked!');
+    }
+
+    public function dislike($id)
+    {
+        $data = Artikel::findOrFail($id);
+        $curVote = $data->vote - 1;
+        $data->vote = $curVote;
+        $data->save();
+        return redirect()->back()->with('flash_success', 'Disliked!');
+    }
+
+    public function comment(Request $request, $id, $uid)
+    {
+        $data = new Comment;
+        $data->value = $request->value;
+        $data->artikel_id = $id;
+        $data->user_id = $uid;
+        $data->save();
+        return redirect()->back()->with('flash_success', 'Comment Success!');
     }
 }

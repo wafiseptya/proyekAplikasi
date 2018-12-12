@@ -29,6 +29,19 @@ a {
   flex-wrap: nowrap;
   padding: 0 15em;
 }
+.left-banner {
+  width: 30vw;
+  height: 100vh;
+  position: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.right-content {
+  margin-left: 30vw;
+  padding: 20px;
+  
+}
 .header {
   background-image: url("/assets/images/4.jpg");
   height: 100vh;
@@ -68,6 +81,10 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.left-banner-items {
+  text-align: center;
+  margin-bottom: 15px;
+}
 .img1 {
   position: relative;
   float: left;
@@ -76,6 +93,16 @@ a {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.center-bg-img {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.center-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .round-img {
   border-radius: 50%;

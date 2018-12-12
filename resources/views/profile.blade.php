@@ -34,75 +34,6 @@
         {{ $artikel->links() }}
     </div>
   </div>
-<!-- <section class="kategori">
-    <div class="separator">
-        <h2 class="wide-spacing">category name.</h2>
-    </div>
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-md-3">
-                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
-            </div>
-            <div class="col-md-9">
-                <a class="no-style" href="#">
-                    <h4 class="text-left">wisata title.</h4>
-                </a>
-                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
-            </div>
-        </div>
-
-        <div class="row mb-5">
-            <div class="col-md-3">
-                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/budaya.jpg')}}');"></div>
-            </div>
-            <div class="col-md-9">
-                <a class="no-style" href="#">
-                    <h4 class="text-left">wisata title.</h4>
-                </a>
-                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
-            </div>
-        </div>
-        <div class="row mb-5">
-            <div class="col-md-3">
-                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/pantai.jpg')}}');"></div>
-            </div>
-            <div class="col-md-9">
-                <a class="no-style" href="#">
-                    <h4 class="text-left">wisata title.</h4>
-                </a>
-                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
-            </div>
-        </div>
-        <div class="row mb-5">
-            <div class="col-md-3">
-                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/kuliner1.jpg')}}');"></div>
-            </div>
-            <div class="col-md-9">
-                <a class="no-style" href="#">
-                    <h4 class="text-left">wisata title.</h4>
-                </a>
-                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
-            </div>
-        </div>
-
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item active"><a class="page-link" href="#">2<span class="sr-only">(current)</span></a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-        </nav>
-
-    </div>
-</section> -->
-
-
 <!-- Modal -->
 
 <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -189,7 +120,13 @@
 
 @endsection
 @section('js')
-<script>
 
+<script>
+$('#avaPhoto').on('change',function(){
+    //get the file name
+    var fileName = document.getElementById("avaPhoto").files[0].name;
+    //replace the "Choose a file" label
+    $(this).next('.custom-file-label').html(fileName);
+})
 </script>
 @endsection

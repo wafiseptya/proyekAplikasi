@@ -112,6 +112,8 @@ class ComposerStaticInit8960ab792332e5a03cdc18dd998d760f
         'C' => 
         array (
             'Cron\\' => 5,
+            'Cog\\Laravel\\Love\\' => 17,
+            'Cog\\Contracts\\Love\\' => 19,
         ),
         'B' => 
         array (
@@ -290,6 +292,14 @@ class ComposerStaticInit8960ab792332e5a03cdc18dd998d760f
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'Cog\\Laravel\\Love\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cybercog/laravel-love/src',
+        ),
+        'Cog\\Contracts\\Love\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cybercog/laravel-love/contracts',
+        ),
         'BeyondCode\\DumpServer\\' => 
         array (
             0 => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src',
@@ -344,7 +354,9 @@ class ComposerStaticInit8960ab792332e5a03cdc18dd998d760f
         'App\\Artikel' => __DIR__ . '/../..' . '/app/Artikel.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\ArtikelController' => __DIR__ . '/../..' . '/app/Http/Controllers/ArtikelController.php',
+        'App\\Http\\Controllers\\Auth\\AdminLoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AdminLoginController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -385,6 +397,28 @@ class ComposerStaticInit8960ab792332e5a03cdc18dd998d760f
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'Cog\\Contracts\\Love\\LikeCounter\\Models\\LikeCounter' => __DIR__ . '/..' . '/cybercog/laravel-love/contracts/LikeCounter/Models/LikeCounter.php',
+        'Cog\\Contracts\\Love\\Like\\Exceptions\\InvalidLikeType' => __DIR__ . '/..' . '/cybercog/laravel-love/contracts/Like/Exceptions/InvalidLikeType.php',
+        'Cog\\Contracts\\Love\\Like\\Models\\Like' => __DIR__ . '/..' . '/cybercog/laravel-love/contracts/Like/Models/Like.php',
+        'Cog\\Contracts\\Love\\Likeable\\Exceptions\\InvalidLikeable' => __DIR__ . '/..' . '/cybercog/laravel-love/contracts/Likeable/Exceptions/InvalidLikeable.php',
+        'Cog\\Contracts\\Love\\Likeable\\Models\\Likeable' => __DIR__ . '/..' . '/cybercog/laravel-love/contracts/Likeable/Models/Likeable.php',
+        'Cog\\Contracts\\Love\\Likeable\\Services\\LikeableService' => __DIR__ . '/..' . '/cybercog/laravel-love/contracts/Likeable/Services/LikeableService.php',
+        'Cog\\Contracts\\Love\\Liker\\Exceptions\\InvalidLiker' => __DIR__ . '/..' . '/cybercog/laravel-love/contracts/Liker/Exceptions/InvalidLiker.php',
+        'Cog\\Contracts\\Love\\Liker\\Models\\Liker' => __DIR__ . '/..' . '/cybercog/laravel-love/contracts/Liker/Models/Liker.php',
+        'Cog\\Laravel\\Love\\Console\\Commands\\Recount' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Console/Commands/Recount.php',
+        'Cog\\Laravel\\Love\\LikeCounter\\Models\\LikeCounter' => __DIR__ . '/..' . '/cybercog/laravel-love/src/LikeCounter/Models/LikeCounter.php',
+        'Cog\\Laravel\\Love\\Like\\Enums\\LikeType' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Like/Enums/LikeType.php',
+        'Cog\\Laravel\\Love\\Like\\Models\\Like' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Like/Models/Like.php',
+        'Cog\\Laravel\\Love\\Like\\Observers\\LikeObserver' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Like/Observers/LikeObserver.php',
+        'Cog\\Laravel\\Love\\Likeable\\Events\\LikeableWasDisliked' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Likeable/Events/LikeableWasDisliked.php',
+        'Cog\\Laravel\\Love\\Likeable\\Events\\LikeableWasLiked' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Likeable/Events/LikeableWasLiked.php',
+        'Cog\\Laravel\\Love\\Likeable\\Events\\LikeableWasUndisliked' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Likeable/Events/LikeableWasUndisliked.php',
+        'Cog\\Laravel\\Love\\Likeable\\Events\\LikeableWasUnliked' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Likeable/Events/LikeableWasUnliked.php',
+        'Cog\\Laravel\\Love\\Likeable\\Models\\Traits\\Likeable' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Likeable/Models/Traits/Likeable.php',
+        'Cog\\Laravel\\Love\\Likeable\\Observers\\LikeableObserver' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Likeable/Observers/LikeableObserver.php',
+        'Cog\\Laravel\\Love\\Likeable\\Services\\LikeableService' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Likeable/Services/LikeableService.php',
+        'Cog\\Laravel\\Love\\Liker\\Models\\Traits\\Liker' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Liker/Models/Traits/Liker.php',
+        'Cog\\Laravel\\Love\\Providers\\LoveServiceProvider' => __DIR__ . '/..' . '/cybercog/laravel-love/src/Providers/LoveServiceProvider.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
