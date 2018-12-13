@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Artikel extends Model
+class Artikel extends Model 
 {
     protected $table = "artikels";
     public function wisata()
@@ -14,6 +14,10 @@ class Artikel extends Model
     public function komentar()
     {
         return $this->hasMany('App\Comment');
+    }
+    public function like()
+    {
+        return $this->hasMany('App\Like');
     }
     public function users()
     {

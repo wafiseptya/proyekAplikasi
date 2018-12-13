@@ -7,6 +7,9 @@ use App\Kategori;
 
 class HomepageController extends Controller
 {
+
+    
+
     public function index()
     {
         $kategori = Kategori::all();

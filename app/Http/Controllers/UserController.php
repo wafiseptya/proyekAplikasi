@@ -20,7 +20,7 @@ class UserController extends Controller
     {
         $data = auth()->user();
         $id = auth()->user()->id;
-        $artikel = User::find($id)->artikel()->paginate(5);
+        $artikel = User::find($id)->artikel()->orderBy('created_at', 'desc')->paginate(5);
         return view('newp', compact('data', 'artikel'));
     }
 
@@ -55,7 +55,7 @@ class UserController extends Controller
     {
         $data = User::where('username', $username)->first();
         $id = $data->id;
-        $artikel = User::find($id)->artikel()->paginate(5);
+        $artikel = User::find($id)->artikel()->orderBy('created_at', 'desc')->paginate(5);
         return view('newp', compact('data', 'artikel'));
     }
 
@@ -87,7 +87,7 @@ class UserController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'avatar' => 'mimes:jpeg,jpg,png',
+            'avatar' => 'mimes:jpeg,jpg,png|max:2048',
         ]);
     }
     public function update(Request $request, $id)
@@ -97,6 +97,7 @@ class UserController extends Controller
         $data = User::findOrFail($id);
 
         $data->name = $request->name;
+        $data->bio = $request->bio;
         if($request->password){
             $data->password = bcrypt($request->password);
         }

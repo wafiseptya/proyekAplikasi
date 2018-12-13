@@ -48,7 +48,7 @@ class KategoriController extends Controller
     public function show($id, $slug)
     {
         $data = Kategori::find($id);
-        $wisata = Kategori::find($id)->wisata()->paginate(5);
+        $wisata = Kategori::find($id)->wisata()->orderBy('created_at', 'desc')->paginate(5);
 	    return view('kategori', compact('data', 'wisata'));
     }
 

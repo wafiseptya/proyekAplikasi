@@ -33,7 +33,7 @@ Route::prefix('admin')->group(function() {
     Route::delete('/wisata/{id}', 'AdminController@destroyWisata')->name('admin.destroyWisata');
 });
 
-Route::get('kategori/{id}/{slug}', 'KategoriController@show');
+Route::get('kategori/{id}/{slug}', 'KategoriController@show')->name('kategori.show');
 
 Route::get('wisata/{id}/{slug}', 'WisataController@show');
 
@@ -42,17 +42,10 @@ Route::post('artikel', 'ArtikelController@store')->name('artikel.store')->middle
 
 Route::post('artikel/{id}/{uid}/comment', 'ArtikelController@comment')->name('artikel.comment');
 
-Route::post('artikel/{id}/like', 'ArtikelController@like')->name('artikel.like');
-Route::post('artikel/{id}/dislike', 'ArtikelController@dislike')->name('artikel.dislike');
+Route::post('artikel/{id}/{uid}/like', 'ArtikelController@like')->name('artikel.like');
+Route::post('artikel/{id}/{uid}/dislike', 'ArtikelController@dislike')->name('artikel.dislike');
 
 Route::get('create/{artikel}', 'ArtikelController@create')->name('artikel.create')->middleware('auth');
-
-Route::get('/wisata', function () {
-    return view('wisata');
-});
-Route::get('/kategori', function () {
-    return view('kategori');
-});
 
 Route::get('profile/{profile}', 'UserController@show')->name('profile.show');
 Route::resource('profile', 'UserController')->except([
@@ -60,5 +53,3 @@ Route::resource('profile', 'UserController')->except([
 ]);   
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

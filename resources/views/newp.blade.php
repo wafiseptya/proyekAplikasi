@@ -1,4 +1,5 @@
 @extends('template/base')
+@section('pageTitle', $data->name)
 @section('content')
 <div class="">
     <aside class="left-banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('{{asset('assets/images/bg-mount.jpg')}}')">
@@ -142,6 +143,19 @@
                         @if ($errors->has('name'))
                           <span class="help-block">
                               <strong>{{ $errors->first('name') }}</strong>
+                          </span>
+                          @endif
+                    </div>
+
+                </div>
+                <div class="form-group{{ $errors->has('bio') ? ' has-error' : '' }}">
+                        
+                    <label for="bio" class="col-md-6 control-label">Biodata</label>
+                    <div class="col-md-12">
+                        <textarea id="bio" class="form-control" placeholder="Masukkan Bio" name="bio" value="{{$data->bio}}" required>
+                        @if ($errors->has('bio'))
+                          <span class="help-block">
+                              <strong>{{ $errors->first('bio') }}</strong>
                           </span>
                           @endif
                     </div>

@@ -1,4 +1,5 @@
 @extends('template/base')
+@section('pageTitle', $data->nama_wisata)
 @section('content')
 <section class="desc">
         <div class="separator">
