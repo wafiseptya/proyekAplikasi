@@ -350,6 +350,7 @@ class ComposerStaticInit8960ab792332e5a03cdc18dd998d760f
     );
 
     public static $classMap = array (
+        'AdminsSeeder' => __DIR__ . '/../..' . '/database/seeds/AdminsSeeder.php',
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Artikel' => __DIR__ . '/../..' . '/app/Artikel.php',
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
@@ -380,6 +381,7 @@ class ComposerStaticInit8960ab792332e5a03cdc18dd998d760f
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Kategori' => __DIR__ . '/../..' . '/app/Kategori.php',
+        'App\\Like' => __DIR__ . '/../..' . '/app/Like.php',
         'App\\Mail\\SuccessMail' => __DIR__ . '/../..' . '/app/Mail/SuccessMail.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

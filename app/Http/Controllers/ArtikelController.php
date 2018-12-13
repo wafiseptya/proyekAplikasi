@@ -74,8 +74,9 @@ class ArtikelController extends Controller
         ->take(4)
         ->get();
         $comments = Artikel::find($id)->komentar()->orderBy('created_at', 'asc')->paginate(5);
-        $like = Artikel::find($id)->like();
-	    return view('artikel', compact('comments', 'like', 'data', 'user', 'wisata', 'related'));
+        $like = Artikel::find($id)->like()->where('artikel_id', $id)->get();
+        
+        return view('artikel', compact('comments', 'like', 'data', 'user', 'wisata', 'related'));
     }
 
     /**

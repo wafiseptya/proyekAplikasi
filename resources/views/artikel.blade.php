@@ -27,10 +27,9 @@
               @csrf
           </form>
           <a 
-            @if ($like->where([
-                ['user_id', '=', Auth::user()->id],
-                ['type', '=', 'LIKE']
-            ])->exists())
+            @if ($like->where('user_id', Auth::user()->id)
+                      ->where('type', 'LIKE')
+                      ->count() > 0)
 
             @else
               style="border-color: #28a745;background-color: transparent; color: #28a745;"
@@ -46,10 +45,9 @@
               @csrf
           </form>
           <a 
-            @if ($like->where([
-                ['user_id', '=', Auth::user()->id],
-                ['type', '=', 'DISLIKE']
-            ])->exists())
+            @if ($like->where('user_id', Auth::user()->id)
+                      ->where('type', 'DISLIKE')
+                      ->count() > 0)
 
             @else
               style="border-color: #dc3545;background-color: transparent; color: #dc3545;"
