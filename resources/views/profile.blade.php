@@ -1,39 +1,127 @@
 @extends('template/base')
+@section('pageTitle', $data->name)
 @section('content')
-<section class="banner" style="background-image: url('{{asset('assets/images/yogyakarta.jpg')}}')">
-  <div class="row justify-content-center">
-      <div class="img-banner round-img" style="background-image:url('{{asset($data->avatar)}}');"></div>
-  </div>
-</section>
-<div class="half-separator"></div>
-  <div class="container border rounded">
-    <div class="row">
-      <div class="col-md-10 mr-5">
-        <h2 class="text">Data Diri</h2>
-        <h3 class="text mt-3">{{$data->name}}</h3>
-        <h6 class="text mt-3">TTL Maybe</h6>
+<div class="">
+    <aside class="left-banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('{{asset('assets/images/bg-mount.jpg')}}')">
+      <div class="mt-5 row h-100 justify-content-center wh align-content-center" style="flex-wrap: wrap">
+          <div class="left-banner-items col-md-12">
+              <div class="center-items p-0 border small-round-img m-auto">
+                    {{ $data->artikel->sum('vote') }}
+              </div>
+              Likes
+          </div>
+          <div class="left-banner-items col-md-12">
+              <div class="center-items p-0 border small-round-img m-auto">
+                  {{ $data->artikel->count() }}
+              </div>
+              Artikels
+          </div>
       </div>
-      <div class="col-md-1">
-        <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true" data-toggle="modal" data-target="#modalUpdate" >Update</a>
-      </div>
-    </div>
-  </div>
-<div class="half-separator"></div>
-  <div class="container">
-    <div class="row">
-        @foreach ($artikel as $item)
-        <a href="{{ URL::to("artikel/{$item->id}/{$item->judul_artikel}") }}" style="width:100%; color:initial">
-            <div class="col-md-12 border rounded">
-              <div class="img small-but-not-that-small-round-img mr-4" style="background-image:url('{{asset($item->banner)}}');"></div>
-              <h1 class="text mt-1  ">{{$item->judul_artikel}}</h1>
-              <h6 class="text mt-2">{{ $item->created_at->format('d F Y H:i' ) }}</h6>
-              <h6 class="text mt-2">{{$item->vote}}</h6>
+    </aside>
+    <section class="right-content">
+        <div class="half-separator"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <div class="center-bg-img med-round-img m-auto" style="background-image:url('{{asset($data->avatar)}}');"></div>
+                    <h3 class="text text-center mt-3">{{$data->name}}</h3>
+                    <h6 class="text text-center mt-3">About</h6>
+                    <a href="#" class="btn btn-dark btn-lg mt-3" role="button" aria-pressed="true" data-toggle="modal" data-target="#modalUpdate" >Update</a>
+                </div>
+                <div class="col-md-1">
+                </div>
             </div>
-        </a>
-        @endforeach
-        {{ $artikel->links() }}
+        </div>
+        <div class="container">
+            <h6 class="text mb-3 mt-3 big">Articles</h6>
+            <div class="row">
+                @foreach ($artikel as $item)
+                <a href="{{ URL::to("artikel/{$item->id}/{$item->judul_artikel}") }}" style="width:100%; color:initial; font-size:0.6rem;">
+                    <div class="col-md-12 border py-1 rounded">
+                        <div class="img small-round-img mr-4" style="background-image:url('{{asset($item->banner)}}');"></div>
+                        <h1 class="text">{{$item->judul_artikel}}</h1>
+                        <h6 class="text mt-1 big">{{ $item->created_at->format('d F Y H:i' ) }}</h6>
+                        <h6 class="text big">{{$item->vote}} Likes</h6>
+                    </div>
+                </a>
+                @endforeach
+                <div class="mt-3 mx-auto">
+                    {{ $artikel->links() }}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- <section class="kategori">
+    <div class="separator">
+        <h2 class="wide-spacing">category name.</h2>
     </div>
-  </div>
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/tugu.jpg')}}');"></div>
+            </div>
+            <div class="col-md-9">
+                <a class="no-style" href="#">
+                    <h4 class="text-left">wisata title.</h4>
+                </a>
+                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/budaya.jpg')}}');"></div>
+            </div>
+            <div class="col-md-9">
+                <a class="no-style" href="#">
+                    <h4 class="text-left">wisata title.</h4>
+                </a>
+                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/pantai.jpg')}}');"></div>
+            </div>
+            <div class="col-md-9">
+                <a class="no-style" href="#">
+                    <h4 class="text-left">wisata title.</h4>
+                </a>
+                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="img med-round-img" style="background-image:url('{{asset('assets/images/kuliner1.jpg')}}');"></div>
+            </div>
+            <div class="col-md-9">
+                <a class="no-style" href="#">
+                    <h4 class="text-left">wisata title.</h4>
+                </a>
+                <p class="small-desc text-justify last-left line-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ratione! Quaerat. Labore autem pariatur id veritatis maxime illum! Voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor placeat fuga ipsum porro, ipsam rem dicta recusandae cum nostrum tenetur in dolores, nulla totam maxime reiciendis, reprehenderit officiis blanditiis error!</p>
+            </div>
+        </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item active"><a class="page-link" href="#">2<span class="sr-only">(current)</span></a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+        </nav>
+
+    </div>
+</section> -->
+
+
 <!-- Modal -->
 
 <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -119,6 +207,7 @@
 </div>
 
 @endsection
+
 @section('js')
 
 <script>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Artikel;
 use App\User;
 use App\Comment;
+use App\Like;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -72,8 +73,9 @@ class ArtikelController extends Controller
         ->orderBy('vote', 'desc')
         ->take(4)
         ->get();
-        $comments = Artikel::find($id)->komentar()->orderBy('created_at', 'desc')->paginate(5);
-	    return view('artikel', compact('comments','data', 'user', 'wisata', 'related'));
+        $comments = Artikel::find($id)->komentar()->orderBy('created_at', 'asc')->paginate(5);
+        $like = Artikel::find($id)->like();
+	    return view('artikel', compact('comments', 'like', 'data', 'user', 'wisata', 'related'));
     }
 
     /**
@@ -110,22 +112,110 @@ class ArtikelController extends Controller
         //
     }
     
-    public function like($id)
-    {
-        $data = Artikel::findOrFail($id);
-        $curVote = $data->vote + 1;
-        $data->vote = $curVote;
-        $data->save();
-        return redirect()->back()->with('flash_success', 'Liked!');
+    public function like($id, $uid)
+    {   
+        // dd('test');
+        if (Like::where([
+            ['user_id', '=', $uid],
+            ['type', '=', 'LIKE']
+        ])->exists())
+        {
+            $data = Like::where([
+                ['user_id', '=', $uid],
+                ['type', '=', 'LIKE']
+                ])->first();
+                $lid = $data->id;
+                Like::destroy($lid);
+                
+                $artikel = Artikel::findOrFail($id);
+                $curLike = Like::where([
+                    ['artikel_id', '=', $id],
+                    ['type', '=', 'LIKE']
+                ])->count();
+                $curDislike = Like::where([
+                    ['artikel_id', '=', $id],
+                    ['type', '=', 'DISLIKE']
+                ])->count();
+                $curVote = $curLike - $curDislike;
+                $artikel->vote = $curVote;
+                $artikel->save();
+                return redirect()->back()->with('alert', 'Unliked!');
+        }
+        else 
+        {
+            $like = new Like;
+            $like->artikel_id = $id;
+            $like->user_id = $uid;
+            $like->type = 'LIKE';
+            $like->save();
+            $artikel = Artikel::findOrFail($id);
+            $curLike = Like::where([
+                ['artikel_id', '=', $id],
+                ['type', '=', 'LIKE']
+            ])->count();
+            $curDislike = Like::where([
+                ['artikel_id', '=', $id],
+                ['type', '=', 'DISLIKE']
+            ])->count();
+            $curVote = $curLike - $curDislike;
+            $artikel->vote = $curVote;
+            $artikel->save();
+            return redirect()->back()->with('alert', 'Liked!');
+        }
     }
 
-    public function dislike($id)
+    public function dislike($id, $uid)
     {
-        $data = Artikel::findOrFail($id);
-        $curVote = $data->vote - 1;
-        $data->vote = $curVote;
-        $data->save();
-        return redirect()->back()->with('flash_success', 'Disliked!');
+        
+        if (Like::where([
+            ['user_id', '=', $uid],
+            ['type', '=', 'DISLIKE']
+        ])->exists())
+        {
+            $data = Like::where([
+                ['user_id', '=', $uid],
+                ['type', '=', 'DISLIKE']
+            ])->first();
+            $lid = $data->id;
+            Like::destroy($lid);
+            
+            $artikel = Artikel::findOrFail($id);
+            $curLike = Like::where([
+                ['artikel_id', '=', $id],
+                ['type', '=', 'LIKE']
+            ])->count();
+            $curDislike = Like::where([
+                ['artikel_id', '=', $id],
+                ['type', '=', 'DISLIKE']
+            ])->count();
+            $curVote = $curLike - $curDislike;
+            $artikel->vote = $curVote;
+            $artikel->save();
+            
+            return redirect()->back()->with('alert', 'Undisliked!');
+        }
+        else 
+        {
+            $like = new Like;
+            $like->artikel_id = $id;
+            $like->user_id = $uid;
+            $like->type = 'DISLIKE';
+            $like->save();
+            $artikel = Artikel::findOrFail($id);
+            $curLike = Like::where([
+                ['artikel_id', '=', $id],
+                ['type', '=', 'LIKE']
+            ])->count();
+            $curDislike = Like::where([
+                ['artikel_id', '=', $id],
+                ['type', '=', 'DISLIKE']
+            ])->count();
+            $curVote = $curLike - $curDislike;
+            $artikel->vote = $curVote;
+            $artikel->save();
+            
+            return redirect()->back()->with('alert', 'Disliked!');
+        }
     }
 
     public function comment(Request $request, $id, $uid)

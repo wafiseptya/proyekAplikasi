@@ -1,4 +1,5 @@
 @extends('template/base')
+@section('pageTitle', 'Home')
 @section('content')
     <section class="header">
         <div class="container">
@@ -64,9 +65,6 @@ perguruan tinggi. </p>
                                 <h4 class="card-title mb-0">{{$data->nama_kategori}}.</h4>
                             </a>
                         </div>
-                        <div class="card-footer">
-                            <h6 class="">more</h6>
-                        </div>
                     </div>
                     @endforeach
                 </div>
@@ -75,7 +73,6 @@ perguruan tinggi. </p>
     </section>
     <section class="kategori-extend">
         @foreach ($kategori as $data)
-        <div class="half-separator"></div>
         <div class="container">
             <div class="border">
             <div class="row">

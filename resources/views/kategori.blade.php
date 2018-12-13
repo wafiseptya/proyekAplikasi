@@ -1,4 +1,5 @@
 @extends('template/base')
+@section('pageTitle', $data->nama_kategori)
 @section('content')
 <section class="header" style="background-image: url('{{$data->banner}}')">
     <div class="container">

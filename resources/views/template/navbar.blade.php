@@ -7,10 +7,21 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="ml-3 collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Kategori <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+                        @foreach ($ktg as $k)
+                            <a class="dropdown-item" href="{{ route('kategori.show', ['id' => $k->id, 'slug' => $k->nama_kategori ]) }}">
+                                {{ $k->nama_kategori }}
+                            </a>    
+                        @endforeach
+                    </div>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->

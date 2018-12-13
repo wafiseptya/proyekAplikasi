@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Mail\SuccessMail;
 use Illuminate\Support\Facades\Mail;
+use App\Kategori;
+use View;
 
 class RegisterController extends Controller
 {
@@ -39,6 +41,8 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        $kategori = Kategori::all();
+        View::share('ktg', $kategori);
         $this->middleware('guest');
     }
 

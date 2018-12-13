@@ -1,4 +1,5 @@
 @extends('template/base')
+@section('pageTitle', $data->judul_artikel)
 @section('content')
 <section class="desc">
 <div class="container">
@@ -14,29 +15,52 @@
     <div class="row">
         <div class="col-md-10">
         <div class="img small-round-img mr-4" style="background-image:url('{{$user->avatar}}');"></div>
+        <a style="color:initial;" href="{{ route('profile.show', ['username' => $user->username]) }}">
           <h5 class="text ">{{ $user->name }}</h5>
-          
+        </a>  
         </div>
+        @guest
+        @else
+        
         <div class="col-md-1 col-sm-2">
-          <form id="like-form" action="{{ route('artikel.like', ['id' => $data->id]) }}" method="POST" style="display: none;">
+          <form id="like-form" action="{{ route('artikel.like', ['id' => $data->id, 'uid' => Auth::user()->id]) }}" method="POST" style="display: none;">
               @csrf
           </form>
-          <a class="btn btn-lg btn-success btn-block" href="{{ route('artikel.like', ['id' => $data->id]) }}"
+          <a 
+            @if ($like->where([
+                ['user_id', '=', Auth::user()->id],
+                ['type', '=', 'LIKE']
+            ])->exists())
+
+            @else
+              style="border-color: #28a745;background-color: transparent; color: #28a745;"
+            @endif
+          class="btn btn-lg btn-success btn-block" href="{{ route('artikel.like', ['id' => $data->id, 'uid' => Auth::user()->id]) }}"
               onclick="event.preventDefault();
                             document.getElementById('like-form').submit();">
               <i class="far fa-thumbs-up"></i>
           </a>
         </div>
         <div class="col-md-1 col-sm-2">
-          <form id="dislike-form" action="{{ route('artikel.dislike', ['id' => $data->id]) }}" method="POST" style="display: none;">
+          <form id="dislike-form" action="{{ route('artikel.dislike', ['id' => $data->id, 'uid' => Auth::user()->id]) }}" method="POST" style="display: none;">
               @csrf
           </form>
-          <a class="btn btn-lg btn-danger btn-block" href="{{ route('artikel.dislike', ['id' => $data->id]) }}"
+          <a 
+            @if ($like->where([
+                ['user_id', '=', Auth::user()->id],
+                ['type', '=', 'DISLIKE']
+            ])->exists())
+
+            @else
+              style="border-color: #dc3545;background-color: transparent; color: #dc3545;"
+            @endif
+          class="btn btn-lg btn-danger btn-block" href="{{ route('artikel.dislike', ['id' => $data->id, 'uid' => Auth::user()->id]) }}"
               onclick="event.preventDefault();
                             document.getElementById('dislike-form').submit();">
               <i class="far fa-thumbs-down"></i>
           </a>
         </div>
+        @endguest
       </div>
   </div>
   <div class="container">
@@ -103,7 +127,24 @@
 
 
 </section>
-
+@guest
+<div  class="container pt-5">
+  <div class="row">
+      <div class="col-sm-12">
+          <form  id="comment-form" action="" method="POST">
+              <div class="form-group col ">
+                  @csrf
+                  <label for="comment">Comment</label>
+                  <textarea class="form-control" name="value" id="comment" rows="6" placeholder="Login to Post a Comment" disabled></textarea>
+              </div>
+              <div class="col">
+                      <button type="submit" class="btn btn-secondary">Submit</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+@else
 <div  class="container pt-5">
     <div class="row">
         <div class="col-sm-12">
@@ -120,5 +161,6 @@
         </div>
     </div>
 </div>
+@endguest
 <div class="separator"></div>
 @endsection

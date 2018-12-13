@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ayo Dolan!</title>
+    <title>@yield('pageTitle') - Ayo Dolan!</title>
 
         {{-- CSS HERE --}}
         <link rel="stylesheet" href="{{asset('assets/css/ayodolan.main.css')}}">
@@ -37,7 +37,14 @@
     <script src="{{asset('assets/vendor/fontawesome/js/all.css')}}"></script>
     {{-- nicescroll --}}
     <script src="{{asset('assets/vendor/nicescroll/jquery.nicescroll.min.js')}}"></script>
-
+    
+    <script>
+        var msg = '{{Session::get('alert')}}';
+        var exist = '{{Session::has('alert')}}';
+        if(exist){
+        alert(msg);
+        }
+    </script>
     @yield('js')
 
 </html>
